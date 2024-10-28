@@ -26,12 +26,21 @@ function RegisterPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+    <div className="relative flex items-center justify-center min-h-screen bg-gray-900 overflow-hidden">
+      {/* Video de fondo */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute w-full h-full object-cover -z-10"
+        src="/path-to-your-video.mp4" // Reemplaza con la ruta de tu video
+      ></video>
+
       {/* Contenedor principal */}
-      <div className="flex w-full max-w-5xl flex-col lg:flex-row shadow-2xl rounded-lg overflow-hidden bg-gray-800">
+      <div className="relative flex w-full max-w-5xl flex-col lg:flex-row shadow-2xl rounded-lg overflow-hidden bg-gray-800 bg-opacity-75 backdrop-blur-sm">
         
-        {/* lado izquierdo formulario de registro */}
-        <div className="lg:w-1/2 w-full p-10 flex items-center justify-center bg-gray-900">
+        {/* Lado izquierdo: Formulario de registro */}
+        <div className="lg:w-1/2 w-full p-10 flex items-center justify-center">
           <div className="w-full max-w-md">
             <h2 className="text-4xl text-white font-bold text-center mb-8">Crea tu cuenta</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -71,15 +80,15 @@ function RegisterPage() {
           </div>
         </div>
 
-        {/* divisor */}
+        {/* Divisor */}
         <div className="hidden lg:flex lg:divider-vertical w-1 bg-gray-700"></div>
 
-        {/* lado derecho ponemos la imagen */}
-        <div className="lg:w-1/2 w-full p-10 flex items-center justify-center bg-gray-900">
+        {/* Lado derecho: Imagen responsiva */}
+        <div className="lg:w-1/2 w-full p-10 flex items-center justify-center">
           <img
-            src="/path/to/image.png" //imagem buscaaar
+            src="/images/lobo.png" // Ruta de la imagen
             alt="Imagen de registro"
-            className="w-full h-auto rounded-lg shadow-md"
+            className="w-full h-auto max-w-xs lg:max-w-md rounded-lg shadow-md"
           />
         </div>
 
