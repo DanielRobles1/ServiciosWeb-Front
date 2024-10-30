@@ -10,8 +10,10 @@ export default defineConfig({
     open: true, 
   },
   build: {
-    rollupOptions: {
-      external: ['react-router-dom']
+    rollupOptions: {   
+         external: ['@fortawesome/react-fontawesome'],
+         external: ['react-router-dom']
+
     }
   }
 });

@@ -14,6 +14,7 @@
     "@capacitor/cli": "^6.1.2",
     "@capacitor/core": "^6.1.2",
     "@capacitor/ios": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "artesa": "file:",
     "axios": "^1.7.7",
     "react": "^18.3.1",
