@@ -11,8 +11,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {   
-         external: ['@fortawesome/react-fontawesome'],
-         external: ['react-router-dom']
+      external: ['@fortawesome/free-brands-svg-icons', 'react-router-dom']
 
     }
   }
