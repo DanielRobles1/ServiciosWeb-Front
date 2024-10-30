@@ -30,6 +30,7 @@ const Head = () => {
           </button>
         </div>
 
+        {/* Menú desplegable */}
         <ul className={`menu menu-horizontal px-1 ${isOpen ? 'block' : 'hidden'} md:flex`}>
           <li>
             <Link className="nav-link" to="/principal" onClick={handleMenuItemClick}>Nosotros</Link>
