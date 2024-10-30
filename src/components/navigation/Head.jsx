@@ -10,6 +10,10 @@ const Head = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const handleMenuItemClick = () => {
+    setIsOpen(false); // Cierra el menú al hacer clic en un elemento
+  };
+
   return (
     <div className="navbar bg-base-200 fixed top-0 left-0 w-full z-10 px-4">
       <div className="flex justify-between w-full">
@@ -28,25 +32,25 @@ const Head = () => {
 
         <ul className={`menu menu-horizontal px-1 ${isOpen ? 'block' : 'hidden'} md:flex`}>
           <li>
-            <Link className="nav-link" to="/principal">Nosotros</Link>
+            <Link className="nav-link" to="/principal" onClick={handleMenuItemClick}>Nosotros</Link>
           </li>
           <li>
-            <Link className="nav-link" to="#">Tendencias</Link>
+            <Link className="nav-link" to="#" onClick={handleMenuItemClick}>Tendencias</Link>
           </li>
           <li className="dropdown dropdown-end">
             <div tabIndex={0} className="btn btn-ghost">Dropdown</div>
             <ul className="dropdown-content menu p-2 bg-base-100 rounded-box w-52">
-              <li><Link className="dropdown-item" to="/regispro">Agregar producto</Link></li>
-              <li><Link className="dropdown-item" to="#">Productos</Link></li>
+              <li><Link className="dropdown-item" to="/regispro" onClick={handleMenuItemClick}>Agregar producto</Link></li>
+              <li><Link className="dropdown-item" to="#" onClick={handleMenuItemClick}>Productos</Link></li>
               <li><hr className="dropdown-divider" /></li>
-              <li><Link className="dropdown-item" to="#">Eliminar Producto</Link></li>
+              <li><Link className="dropdown-item" to="#" onClick={handleMenuItemClick}>Eliminar Producto</Link></li>
             </ul>
           </li>
           <li>
-            <Link className="nav-link" to="/login">Iniciar Sesión</Link>
+            <Link className="nav-link" to="/login" onClick={handleMenuItemClick}>Iniciar Sesión</Link>
           </li>
           <li>
-            <Link className="nav-link" to="/registroU">Registrarse</Link>
+            <Link className="nav-link" to="/registroU" onClick={handleMenuItemClick}>Registrarse</Link>
           </li>
         </ul>
       </div>
