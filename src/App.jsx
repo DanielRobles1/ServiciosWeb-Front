@@ -2,6 +2,7 @@ import React from 'react';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
+import { faSomeIcon } from '@fortawesome/free-brands-svg-icons';
 
 // Importación de los componentes
 import Modal from './components/navigation/Modal';
