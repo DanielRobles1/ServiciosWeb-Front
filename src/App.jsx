@@ -8,7 +8,9 @@ import Agregarpr from './components/products/Agregarpr';
 import Carrousel from './components/navigation/Carrousel';
 import Head from './components/navigation/Head';
 import Foot from './components/navigation/Foot';
-import RegisterPage from './pages/RegisterPage.jsx'; 
+import RegisterPage from './pages/RegisterPage.jsx';
+import LoginPage from './pages/LoginPage.jsx';
+import PrincipalPage from './pages/PrincipalPage.jsx';
 
 
 const App = () => {
@@ -27,10 +29,13 @@ const App = () => {
 
         {/* Ruta para agregar productos */}
         <Route path='/regispro' element={<Agregarpr />} />
-     
-     {/* Ruta para agregar usuarios */}
-     <Route path='/registroU' element={<RegisterPage />} />
-    
+
+        {/* Ruta para agregar usuarios */}
+        <Route path='/registroU' element={<RegisterPage />} />
+        {/* Ruta para Login */}
+        <Route path='/login' element={<LoginPage />} />
+        {/* Ruta para pagina principal */}
+        <Route path='/principal' element={<PrincipalPage />} />
       </Routes>
 
       <Foot />

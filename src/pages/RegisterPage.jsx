@@ -27,13 +27,13 @@ function RegisterPage() {
 
   return (
     <div className="relative flex items-center justify-center min-h-screen bg-gray-900 overflow-hidden">
-      {/* Video de fondo */}
+      {/* Video de fondo, AUN NO LO BUSCO */}
       <video
         autoPlay
         loop
         muted
         className="absolute w-full h-full object-cover -z-10"
-        src="/path-to-your-video.mp4" // Reemplaza con la ruta de tu video
+        src="/path-to-your-video.mp4" // videop buscar
       ></video>
 
       {/* Contenedor principal */}
