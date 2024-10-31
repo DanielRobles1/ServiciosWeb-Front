@@ -15,10 +15,12 @@ const Head = () => {
   };
 
   return (
+    <>
     <div className="navbar bg-base-200 fixed top-0 left-0 w-full z-10 px-4">
       <div className="flex justify-between w-full">
         <div className="flex-1">
-          <Link className="text-6xl btn btn-ghost" to="/">Artesanías de Oaxaca</Link>
+          
+          <a href="/">Artesanías de Oaxaca</a>
         </div>
         
         {/* Botón de menú hamburguesa para dispositivos móviles */}
@@ -96,6 +98,8 @@ const Head = () => {
         </div>
       </div>
     </div>
+    
+    </>
   );
 }
 
