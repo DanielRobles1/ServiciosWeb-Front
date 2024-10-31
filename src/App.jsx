@@ -12,6 +12,7 @@ import Foot from './components/navigation/Foot';
 import RegisterPage from './pages/RegisterPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import PrincipalPage from './pages/PrincipalPage.jsx';
+import Editar from './pages/Editar.jsx';
 
 
 const App = () => {
@@ -37,6 +38,8 @@ const App = () => {
         <Route path='/login' element={<LoginPage />} />
         {/* Ruta para pagina principal */}
         <Route path='/principal' element={<PrincipalPage />} />
+        {/* Ruta para editar usuario */}
+        <Route path='/editar' element={<Editar />} />
       </Routes>
 
       <Foot />

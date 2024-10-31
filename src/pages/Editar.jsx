@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthProvider';
 
-function RegisterPage() {
+function Editar() {
   const { register, handleSubmit } = useForm();
   const {user, login, logout} = useAuth()
   const onSubmit = async (data) => {
@@ -18,10 +18,8 @@ function RegisterPage() {
 
       if (response.ok) {
         console.log('Datos registrados correctamente:', result);
-        console.log("resultado")
-        console.log(result.name)
-        console.log(result._id)
         //Login
+        
         login(data)
         console.log(data)
       } else {
@@ -49,39 +47,46 @@ function RegisterPage() {
         {/* Lado izquierdo: Formulario de registro */}
         <div className="lg:w-1/2 w-full p-10 flex items-center justify-center">
           <div className="w-full max-w-md">
-            <h2 className="text-4xl text-white font-bold text-center mb-8">Crea tu cuenta</h2>
+            <h2 className="text-4xl text-white font-bold text-center mb-8">Editar</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-1 gap-6">
+                <label className='text-white'>Nombre</label>
                 <input
                   type="text"
                   {...register('name', { required: true })}
                   className="w-full bg-gray-700 text-gray-200 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Nombre completo"
+                  placeholder={user.name}
+                  defaultValue={user.name}
                 />
+                <label className='text-white'>Username</label>
                 <input
                   type="text"
                   {...register('username', { required: true })}
                   className="w-full bg-gray-700 text-gray-200 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Nombre de usuario"
+                  placeholder={user.username}
+                  defaultValue={user.username}
                 />
+                <label className='text-white'>Correo</label>
                 <input
                   type="email"
                   {...register('email', { required: true })}
                   className="w-full bg-gray-700 text-gray-200 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Correo electrónico"
+                  defaultValue={user.email}
                 />
+                <label className='text-white'>Contraseña</label>
                 <input
-                  type="password"
+                  type="text"
                   {...register('password', { required: true })}
                   className="w-full bg-gray-700 text-gray-200 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   placeholder="Contraseña"
+                  defaultValue={user.password}
                 />
               </div>
               <button
                 type="submit"
                 className="w-full mt-8 bg-indigo-600 text-white px-4 py-3 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 transition-all"
               >
-                Registrarse
+                Aplicar Cambios
               </button>
             </form>
           </div>
@@ -104,4 +109,4 @@ function RegisterPage() {
   );
 }
 
-export default RegisterPage;
+export default Editar;

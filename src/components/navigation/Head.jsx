@@ -47,6 +47,7 @@ const Head = () => {
               <li><Link className="dropdown-item" to="#" onClick={handleMenuItemClick}>Productos</Link></li>
               <li><hr className="dropdown-divider" /></li>
               <li><Link className="dropdown-item" to="#" onClick={handleMenuItemClick}>Eliminar Producto</Link></li>
+              
             </ul>
           </li>
           <li>
@@ -54,6 +55,9 @@ const Head = () => {
           </li>
           <li>
             <Link className="nav-link" to="/registroU" onClick={handleMenuItemClick}>Registrarse</Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="/editar" onClick={handleMenuItemClick}>Editar</Link>
           </li>
         </ul>
       </div>
