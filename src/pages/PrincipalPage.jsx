@@ -29,6 +29,7 @@ function PrincipalPage() {
      
       <section className="py-20 px-6 text-center bg-gradient-to-r from-yellow-100 to-yellow-50">
         <h2 className="text-4xl font-semibold mb-6">Quiénes Somos</h2>
+        <img src="/path/to/artesanos.jpg" alt="Artesanos trabajando" className="w-full max-w-md mx-auto mb-6 rounded-lg shadow-lg" />
         <p className="max-w-2xl mx-auto text-lg text-gray-700 leading-relaxed">
           En Artesa, nos dedicamos a preservar y promover el arte artesanal.
           Cada pieza es elaborada por manos expertas que plasman tradición,
@@ -55,7 +56,7 @@ function PrincipalPage() {
               Ver más
             </button>
           </div>
-          {/* podemos añadir productos*/}
+          {/*añadir mas productos*/}
         </div>
       </section>
 
