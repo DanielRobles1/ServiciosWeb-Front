@@ -5,11 +5,14 @@ function Editar() {
   const { register, handleSubmit } = useForm();
   const {user, login, logout} = useAuth()
   const onSubmit = async (data) => {
+
+    console.log(user)
     try {
-      const response = await fetch('http://localhost:4000/api/users/register', {
-        method: 'POST',
+      const response = await fetch(`http://localhost:4000/api/users/${user._id}`, {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
+          'auth-token': user.token
         },
         body: JSON.stringify(data),
       });
@@ -17,7 +20,7 @@ function Editar() {
       const result = await response.json();
 
       if (response.ok) {
-        console.log('Datos registrados correctamente:', result);
+        console.log('Datos actualizados correctamente:', result);
         //Login
         
         login(data)
