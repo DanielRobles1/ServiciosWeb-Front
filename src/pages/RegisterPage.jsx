@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form';
-import { useAuth } from '../context/AuthProvider';
+
 
 function RegisterPage() {
   const { register, handleSubmit } = useForm();
-  const {user, login, logout} = useAuth()
+
   const onSubmit = async (data) => {
     try {
       //Registro
@@ -33,8 +33,7 @@ function RegisterPage() {
         console.log(result.name)
         console.log(result._id)
         //Login
-        const UserData = {...data, ...resultLog, };
-        login(UserData)
+        const UserData = {...data, ...resultLog, }; 
         console.log('userData',UserData)
       } else {
         console.error('Error al registrar los datos:', result);

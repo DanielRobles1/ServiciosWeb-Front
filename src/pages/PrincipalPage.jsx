@@ -1,10 +1,12 @@
 
 
 import React from "react";
-import { useAuth } from "../context/AuthProvider";
+import { selectCurrentUser } from "../features/auth/authSlice";
+import { useSelector } from "react-redux";
+
 
 function PrincipalPage() {
-  const {user, login, logout} = useAuth();
+  const user = useSelector(selectCurrentUser)
   return (
     <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
      
@@ -15,7 +17,7 @@ function PrincipalPage() {
         <div className="absolute inset-0 bg-black opacity-40"></div> {/* Overlay */}
         <div className="relative text-center text-white z-10 max-w-2xl mx-auto px-4">
           <h1 className="text-6xl font-bold mb-4 animate-fade-in-up">
-            Bienvenidos a Artesanías Artesa {user.name}
+            Bienvenido a Artesanías Artesa {user}
           </h1>
           <p className="text-2xl mb-8">
             Donde cada pieza cuenta una historia única

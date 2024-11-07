@@ -1,40 +1,42 @@
-import { useForm } from 'react-hook-form';
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { useAuth } from "../context/AuthProvider";
+import { useDispatch } from "react-redux";
+import { setCredentials } from "../features/auth/authSlice";
+import { useLoginMutation } from "../features/auth/authApiSlice";
+import { useNavigate } from "react-router-dom";
+
+
 
 function Login() {
   const { register, handleSubmit } = useForm();
-
+  //const { user, login, logout } = useAuth();
+  const [login, { isLoading }] = useLoginMutation()
+  const dispatch  = useDispatch();
+  const navigate = useNavigate()
   const onSubmit = async (data) => {
     try {
-        const response = await fetch('http://localhost:4000/api/users/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
-    
-        const result = await response.json();
-    
-        if (response.ok) {
-          console.log('Inicio de sesión exitoso:', result);
-        } else {
-          console.error('Error al iniciar sesión:', result);
-        }
-      } catch (error) {
-        console.error('Error de conexión:', error);
-      }
+      const userData = await login(data).unwrap();
+      console.log(userData);
+      dispatch(setCredentials(userData))
+      navigate('/principal')
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  return (
+  const content = isLoading ? <h1>isLoading</h1>:   (
     <div className="flex items-center justify-center min-h-screen bg-gray-900">
       <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold text-center text-white">Iniciar sesión</h2>
+        <h2 className="text-3xl font-bold text-center text-white">
+          Iniciar sesión
+        </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
             <label className="block text-gray-300">Correo electrónico</label>
             <input
               type="text"
-              {...register('email', { required: true })}
+              {...register("email", { required: true })}
               className="w-full px-4 py-3 mt-2 bg-gray-700 text-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="Nombre de usuario"
             />
@@ -43,7 +45,7 @@ function Login() {
             <label className="block text-gray-300">Contraseña</label>
             <input
               type="password"
-              {...register('password', { required: true })}
+              {...register("password", { required: true })}
               className="w-full px-4 py-3 mt-2 bg-gray-700 text-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="Contraseña"
             />
@@ -56,14 +58,18 @@ function Login() {
           </button>
         </form>
         <p className="mt-4 text-center text-gray-400">
-          ¿Olvidaste tu contraseña?{' '}
-          <a href="/forgot-password" className="text-indigo-500 hover:underline">
-            Recupérala aquí
+          ¿Aun no tienes cuenta?{" "}
+          <a
+            href="/registroU"
+            className="text-indigo-500 hover:underline"
+          >
+            Registrate
           </a>
         </p>
       </div>
     </div>
-  );
+  )
+  return content  
 }
 
 export default Login;
