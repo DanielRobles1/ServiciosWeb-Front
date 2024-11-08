@@ -6,6 +6,7 @@ function RegisterPage() {
   const {user, login, logout} = useAuth()
   const onSubmit = async (data) => {
     try {
+      //Registro
       const response = await fetch('http://localhost:4000/api/users/register', {
         method: 'POST',
         headers: {
@@ -13,17 +14,28 @@ function RegisterPage() {
         },
         body: JSON.stringify(data),
       });
-
       const result = await response.json();
+      //Inicio de Sesión
+      const id = await fetch('http://localhost:4000/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      const resultLog = await id.json();
 
       if (response.ok) {
         console.log('Datos registrados correctamente:', result);
+        console.log('Datos login', resultLog);
         console.log("resultado")
         console.log(result.name)
         console.log(result._id)
         //Login
-        login(data)
-        console.log(data)
+        const UserData = {...data, ...resultLog, };
+        login(UserData)
+        console.log('userData',UserData)
       } else {
         console.error('Error al registrar los datos:', result);
       }
