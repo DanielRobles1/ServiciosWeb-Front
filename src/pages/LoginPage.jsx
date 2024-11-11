@@ -26,7 +26,13 @@ function Login() {
   };
 
   const content = isLoading ? <h1>isLoading</h1>:   (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+    <div className="flex items-center justify-center min-h-screen"
+    style={{
+      backgroundImage: `url('https://i.postimg.cc/Y94Wwsjw/9.jpg')`, // Cambia esta URL por la imagen de fondo que desees
+      backgroundSize: 'cover', // Para cubrir todo el fondo
+      backgroundPosition: 'center', // Para centrar la imagen
+    }}>
+      
       <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-white">
           Iniciar sesión

@@ -1,13 +1,13 @@
 import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
 import React from "react";
 
-export default function Product({name,precio,descripcion}) {
+export default function Product({name,precio,descripcion, imgSrc}) {
   return (
     <div className="card card-side bg-base-100 shadow-xl m-2">
       <figure className=" ">
         <img
-          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-          alt="Movie"
+          src={imgSrc}
+          alt={name}
         />
       </figure>
       <div className="card-body">

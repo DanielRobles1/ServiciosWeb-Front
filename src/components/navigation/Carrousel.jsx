@@ -8,47 +8,35 @@ export default class Carrousel extends Component {
       
       <>
   
-      <div className="carousel carousel-end rounded-box">
+  <div className="carousel carousel-end rounded-box">
         <div className="carousel-item">
           <img
-            src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
-            alt="Drink"
+            src="https://i.postimg.cc/BvmT3Fg2/15.jpg"
+            alt="Drink" width="500" height="700" border='0'
           />
         </div>
         <div className="carousel-item">
           <img
-            src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
-            alt="Drink"
+            src="https://i.postimg.cc/hjwVzqNj/14.jpg"
+            alt="Drink" width="500" height="700" border='0'
           />
         </div>
         <div className="carousel-item">
           <img
-            src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
-            alt="Drink"
+            src="https://i.postimg.cc/j5CzSjgm/12.jpg"
+            alt="Drink" width="500" height="700" border='0'
           />
         </div>
         <div className="carousel-item">
           <img
-            src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp"
-            alt="Drink"
+            src="https://i.postimg.cc/D0JQF8Jw/10.jpg"
+            alt="Drink" width="500" height="700" border='0'
           />
         </div>
         <div className="carousel-item">
           <img
-            src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp"
-            alt="Drink"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp"
-            alt="Drink"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp"
-            alt="Drink"
+            src="https://i.postimg.cc/YCwfzM0L/11.jpg"
+            alt="Drink" width="500" height="700" border='0'
           />
         </div>
       </div>

@@ -104,7 +104,7 @@ function RegisterPage() {
         {/* Lado derecho: Imagen responsiva */}
         <div className="lg:w-1/2 w-full p-10 flex items-center justify-center">
           <img
-            src="/images/lobo.png" // Ruta de la imagen
+            src="/images/iconouwu.png" // Ruta de la imagen
             alt="Imagen de registro"
             className="w-full h-auto max-w-xs lg:max-w-md rounded-lg shadow-md"
           />
